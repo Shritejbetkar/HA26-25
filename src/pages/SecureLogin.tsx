@@ -27,7 +27,7 @@ const SecureLogin: React.FC = () => {
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/auth/request-otp', {
+      const response = await fetch('/api/auth/request-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ identifier }),
@@ -56,7 +56,7 @@ const SecureLogin: React.FC = () => {
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/auth/verify-otp', {
+      const response = await fetch('/api/auth/verify-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ identifier, otp: fullOtp }),

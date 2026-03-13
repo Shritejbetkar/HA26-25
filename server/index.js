@@ -9,6 +9,11 @@ import {
 import OpenAI from 'openai';
 import twilio from 'twilio';
 import secureAuthRoutes from './secureAuth.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Initialize OpenAI
 const openai = new OpenAI({
@@ -290,6 +295,16 @@ app.post('/api/reviews', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+// --- PRODUCTION SETUP ---
+// Serve static files from the React app build
+const distPath = path.join(__dirname, '../dist');
+app.use(express.static(distPath));
+
+// For any request that doesn't match an API route, send back the index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
 // Start Server

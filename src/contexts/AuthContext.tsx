@@ -38,11 +38,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     
     // 2. Try real backend delivery
     try {
-      const response = await fetch('http://localhost:3001/api/send-sms', {
+      const response = await fetch('/api/send-sms', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ to: phone, message }),
-        mode: 'cors'
       });
       if (!response.ok) {
         console.warn('SMS backend returned error:', await response.text());
