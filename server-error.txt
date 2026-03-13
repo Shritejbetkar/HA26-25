@@ -1,0 +1,49 @@
+﻿node : node:internal/modules/pac
+kage_json_reader:316
+At line:1 char:1
++ node server/index.js 2>&1 | 
+Out-File -FilePath 
+server-error.txt -Enco ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : N 
+   otSpecified: (node:internal  
+  /m...json_reader:316:String   
+ ) [], RemoteException
+    + FullyQualifiedErrorId : N 
+   ativeCommandError
+ 
+  throw new ERR_MODULE_NOT_FOUND
+(packageName, 
+fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: 
+Cannot find package 'cors' 
+imported from C:\Users\shrit\One
+Drive\Desktop\sumukhchavan-Maga-
+project-main\sumukhchavan-Maga-p
+roject-main\server\index.js
+    at Object.getPackageJSONURL 
+(node:internal/modules/package_j
+son_reader:316:9)
+    at packageResolve (node:inte
+rnal/modules/esm/resolve:768:81)
+    at moduleResolve (node:inter
+nal/modules/esm/resolve:858:18)
+    at defaultResolve (node:inte
+rnal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (no
+de:internal/modules/esm/loader:7
+57:20)
+    at ModuleLoader.resolve (nod
+e:internal/modules/esm/loader:73
+4:38)
+    at ModuleLoader.getModuleJob
+ForImport (node:internal/modules
+/esm/loader:317:38)
+    at #link (node:internal/modu
+les/esm/module_job:208:49) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.11.0

@@ -1,0 +1,10 @@
+﻿
+> react-example@0.0.0 lint
+> tsc --noEmit
+
+src/pages/WorkerProfile.tsx(100,46): error TS2367: This comparison appears to be unintentional because the types '"active" | "filled" | "closed"' and '"open"' have no overlap.
+src/pages/WorkerProfile.tsx(101,46): error TS2367: This comparison appears to be unintentional because the types '"active" | "filled" | "closed"' and '"in-progress"' have no overlap.
+src/pages/WorkerProfile.tsx(101,78): error TS2339: Property 'workerId' does not exist on type 'Job'.
+src/pages/WorkerProfile.tsx(102,48): error TS2367: This comparison appears to be unintentional because the types '"active" | "filled" | "closed"' and '"completed"' have no overlap.
+src/pages/WorkerProfile.tsx(102,78): error TS2339: Property 'workerId' does not exist on type 'Job'.
+src/pages/WorkerProfile.tsx(431,22): error TS2304: Cannot find name 'MessageCircle'.

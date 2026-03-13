@@ -1,0 +1,9 @@
+{
+  "name": "Daksh-Bharat",
+  "description": "A Skill-Verified Rural Labor Exchange Platform for India connecting verified rural talent with local opportunities.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

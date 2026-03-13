@@ -1,0 +1,109 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Stores profile information for both workers and employers.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "role": { "type": "string", "enum": ["worker", "employer"], "description": "User role" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "photoURL": { "type": "string", "format": "uri" },
+        "phoneNumber": { "type": "string" },
+        "location": {
+          "type": "object",
+          "properties": {
+            "city": { "type": "string" },
+            "district": { "type": "string" },
+            "state": { "type": "string" }
+          }
+        },
+        "trade": { "type": "string", "description": "Primary trade for workers" },
+        "skills": { "type": "array", "items": { "type": "string" } },
+        "experience": { "type": "number" },
+        "wageExpectation": { "type": "number" },
+        "bio": { "type": "string" },
+        "dakshScore": { "type": "number" },
+        "isVerified": { "type": "boolean" },
+        "verifiedBadges": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "role", "displayName", "email"]
+    },
+    "Job": {
+      "title": "Job Posting",
+      "description": "A job posted by an employer.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "employerId": { "type": "string" },
+        "employerName": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "skillRequired": { "type": "string" },
+        "location": {
+          "type": "object",
+          "properties": {
+            "city": { "type": "string" },
+            "district": { "type": "string" },
+            "lat": { "type": "number" },
+            "lng": { "type": "number" }
+          }
+        },
+        "duration": { "type": "string" },
+        "wage": { "type": "number" },
+        "wageType": { "type": "string", "enum": ["daily", "fixed"] },
+        "status": { "type": "string", "enum": ["active", "filled", "closed"] },
+        "applicantsCount": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["employerId", "title", "skillRequired", "wage", "status"]
+    },
+    "Review": {
+      "title": "Worker Review",
+      "description": "A review given by an employer to a worker.",
+      "type": "object",
+      "properties": {
+        "workerId": { "type": "string" },
+        "employerId": { "type": "string" },
+        "employerName": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["workerId", "employerId", "rating"]
+    },
+    "Application": {
+      "title": "Job Application",
+      "description": "An application submitted by a worker for a job.",
+      "type": "object",
+      "properties": {
+        "jobId": { "type": "string" },
+        "workerId": { "type": "string" },
+        "workerName": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "hired", "rejected"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["jobId", "workerId", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile documents"
+    },
+    "/jobs/{jobId}": {
+      "schema": "Job",
+      "description": "Job posting documents"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Worker review documents"
+    },
+    "/applications/{applicationId}": {
+      "schema": "Application",
+      "description": "Job application documents"
+    }
+  }
+}

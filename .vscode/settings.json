@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "name": "XAMPP MySQL Database",
+      "driver": "MySQL",
+      "server": "localhost",
+      "port": 3306,
+      "username": "root",
+      "password": "",
+      "database": "daksh_bharat",
+      "askForPassword": false
+    }
+  ]
+}
