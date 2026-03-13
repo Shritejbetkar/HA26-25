@@ -1,0 +1,30 @@
+DAKSH-BHARAT: RURAL LABOR EXCHANGE PLATFORM
+==========================================
+
+Daksh-Bharat is a full-stack web application designed to bridge the gap between rural workers and employers in India. It serves as a modern labor exchange platform that empowers workers with digital profiles and provides employers with verified talent.
+
+CORE FEATURES
+-------------
+1.  Worker Profiles: Workers can create digital profiles with their skills (e.g., Electrician, Plumber), experience, and location. Profiles include a photo upload and an AI-calculated "Daksh Score" based on verification and ratings.
+2.  Job Board: Employers can post jobs with specific skill requirements, wages, and durations. Workers can browse jobs near them using a map-based interface.
+3.  Secure OTP Authentication: A dual-layered login system supporting Google Sign-In and a custom, secure 6-digit OTP (One-Time Password) delivered via real-time SMS or Email.
+4.  Integrated Payments: Supports both Cash and Online (UPI) payments. Includes a built-in UPI deep-link generator for instant mobile app payments.
+5.  Real-time Interaction: Includes a live chat system for workers and employers to discuss job details, with automated simulated responses for demo mode.
+6.  AI Recommendations: Uses Google's Gemini AI to recommend the best jobs to workers and the best workers to employers based on their profiles and history.
+7.  Multilingual Support: Fully accessible in multiple Indian languages including Hindi, Marathi, Gujarati, and Kannada.
+
+TECH STACK
+----------
+- Frontend: React.js, Vite, Tailwind CSS, Lucide Icons, Framer Motion.
+- Backend: Node.js, Express.js.
+- Database: MySQL (Main data) and Firebase Firestore (Real-time chat).
+- Auth: Firebase Auth (Google) and JWT (Secure OTP).
+- SMS/OTP: Twilio Integration for real-device delivery.
+- AI: Google Gemini 3 Flash and OpenAI GPT-3.5.
+
+HOW TO USE
+----------
+- Workers: Register, verify your mobile via OTP, and apply for jobs on the Job Board.
+- Employers: Post a job, browse verified workers, hire via the dashboard, and pay securely via UPI.
+
+The project is optimized for both real-world deployment and interactive demonstration in restricted environments.
